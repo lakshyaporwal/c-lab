@@ -1,0 +1,560 @@
+//1. Simple program to input and print the array
+#include <stdio.h>
+void main()
+{
+    int a ;
+    printf("Enter the size of array ");
+    scanf("%d",&a);
+    int j[a];
+    for (int i=0;i<a;i++)
+    {
+        scanf("%d",&j[i]);
+    }
+    for(int i=a-1;i>=0;i--)
+    {
+        printf("%d",j[i]);
+    }
+}
+
+//2. program to merge two arrays.
+{
+    int a, b;
+    scanf("%d", &a);
+    int arr[a], arr2[b];
+    for (int i = 0; i < a; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("yes");
+    scanf("%d", &b);
+    for (int i = 0; i < b; i++)
+    {
+        scanf("%d", &arr2[i]);
+    }
+    int c = a + b;
+    int arr3[c];
+    for (int i = 0; i < a; i++)
+    {
+        arr3[i] = arr[i];
+    }
+    for (int i = 0, j = a; j < c && i < b; i++, j++)
+    {
+        arr3[j] = arr2[i];
+    }
+    for (int i = 0; i < c; i++)
+    {
+        printf("%d", arr3[i]);
+    }
+}
+
+//3. Scalar multiplication in 2D array.
+{
+    int a, b, i, j;
+    scanf("%d", &a);
+    int arr[a][a], arr1[a][a];
+    for (i = 0; i < a; i++)
+    {
+        for (j = 0; j < a; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    for (i = 0; i < a; i++)
+    {
+        for (j = 0; j < a; j++)
+        {
+            printf("%d\n", arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Enter the number");
+    scanf("%d", &b);
+    for (i = 0; i < a; i++)
+    {
+        for (j = 0; j < a; j++)
+        {
+            arr1[i][j] = b * arr[i][j];
+        }
+    }
+    for (i = 0; i < a; i++)
+    {
+        for (j = 0; j < a; j++)
+        {
+            printf("%d", arr1[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+//4. Sum of all elements of array and average
+
+{
+    int n=0 ,a,avg=0 ;
+    scanf("%d",&a);
+    int j[a];
+    for (int i = 0;i<a;i++)
+    {
+        scanf("%d",&j[i]);
+    }
+    for (int i=0;i<a;i++)
+    {
+        n = n+j[i];
+    }
+    avg =n/a;
+    printf("%d\n",n);
+    printf("%d\n",avg);
+}
+
+//5. Print the positive ,negative and zero elements in array
+{
+    int a, b = 0, c = 0, d = 0;
+    scanf("%d", &a);
+    int j[a];
+    for (int i = 0; i < a; i++)
+    {
+        scanf("%d", &j[i]);
+    }
+    for (int i = 0; i < a; i++)
+    {
+        if (j[i] < 0)
+        {
+            printf("%d",j[i]);
+            b++;
+        }
+        else if (j[i] > 0)
+        {
+            c++;
+        }
+        else
+        {
+            d++;
+        }
+    }
+    printf("Negatives are : %d\n", b);
+    printf("Positives are : %d\n", c);
+    printf("Zero elements are : %d\n", d);
+}
+
+//6. Print the odd and even elements in array
+{
+    int a,b=0,c=0;
+    scanf("%d",&a);
+    int j[a];
+    for(int i=0;i<a;i++)
+    {
+        scanf("%d",&j[i]);
+    }
+    for(int i=0;i<a;i++)
+    {
+        if(j[i]%2==0)
+        {
+            b++;
+        }
+        else{
+            c++;
+        }
+    }
+    printf("Odd elements : %d\n",c);
+    printf("Even elements : %d\n",b);
+}
+
+//7. To find the maximum element in array
+{
+    int a, b;
+    scanf("%d", &a);
+
+    int arr[a];
+    for (int i = 0; i < a; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < a; i++)
+    {
+        if (arr[0] < arr[i])
+        {
+            arr[0] = arr[i];
+        }
+    }
+    printf("%d is maximum", arr[0]);
+}
+
+// 8. Insertion of an element
+{
+    int a, b, c, n;
+    scanf("%d", &a);
+    int j[a + 1];
+
+    for (int i = 0; i < a; i++)
+    {
+        scanf("%d", &j[i]);
+    }
+    printf("Enter the index at which you want the element to be inserted");
+    scanf("%d", &c);
+    printf("Enter the element which you want to be inserted");
+    scanf("%d", &n);
+    for (int i = a - 1; i >= c; i--)
+    {
+        j[a] = j[a - 1];
+        j[c] = n;
+        a++;
+        printf("%d\n", j[i]);
+    }
+}
+
+//9. Swap two numbers
+{
+    long double a,b,c;
+    printf("Enter the first number  :  ");
+    scanf("%Lf",&a);
+    printf("Enter the second number : ");
+    scanf("%Lf",&b);
+    c = a;
+    a = b;
+    b = c;
+    printf("%Lf\t",a);
+    printf("%Lf",b);
+}
+//10. To calculate profit
+{
+    double a, b, pf;
+    scanf("%lf", &a);
+    scanf("%lf", &b);
+    if (b>a)
+    {
+        printf("Profit\n");
+        pf = ((b - a)/a) * 100.0;
+        printf("%.2lf ", pf);
+        printf("%");        
+    }
+    else
+    {
+        printf("Loss");
+    }
+ }
+
+//11. To check maximum between two numbers using switch
+{
+    long long a,b;
+    scanf("%lld%lld",&a,&b);
+    printf("The numbers are %lld %lld",a,b);
+    switch(a>b)
+    {
+        case 0:
+        switch(a==b)
+        {
+            case 1:
+            printf("Both are equal");
+            break;
+            case 0:
+            printf("%lld is maximum\n",b);
+            break;
+        }
+        break;
+        case 1:
+        printf("%lld is maximum\n",a);
+        break;
+        
+    }
+    return 0;
+}
+
+//12. To print the following pattern 
+//  1
+//  01
+//  101
+//  0101
+//  10101
+{
+    int a, b;
+    scanf("%d", &a);
+    for (int i = 1; i <= a; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            if ((i + j) % 2 == 0)
+            {
+                printf("1");
+            }
+            else
+            {
+                printf("0");
+            }
+        }
+        printf("\n");
+    }
+}
+
+//13.
+{
+    int a ;
+    char c = 65;
+    scanf("%d",&a);                                  // 54321
+    for (int i = 1;i<=a;++i)                            5432
+    {                                                   543
+        for (int j =a;j>=i;--j)                         54
+        printf("%d",j);                                 5
+        printf("\n");
+    }
+}
+
+//14. To print the following pattern
+A
+AB
+ABC
+ABCD
+ABCDE
+{
+    int a;
+    char c = 64;
+    scanf("%d", &a);
+    for (int i = 1; i <= a; ++i)
+    {
+        for (int j = 1; j <= i; ++j)
+            printf("%c",(j+c));
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+//15.factorial of any number using while loop
+{
+int a,b=1,c=1;
+    scanf("%d",&a);
+    while(b<=a)
+    {
+        c=c*b;
+        b++;
+    }
+    printf("%d",c);
+}
+
+//16. Perfect number
+{
+    int a, b, c, d=0, sum = 0;
+    scanf("%d", &a);
+    for (b = 1; b <= (a / 2); ++b)
+    {
+        for (c = 1; c <= b; ++c)
+            if (a  % b == 0)
+            {
+               sum = sum + b;
+            }
+        
+    }
+    if (sum == a)
+    {
+        printf("Perfect number");
+    }
+    else
+    {
+        printf("Not a perfect number");
+    }
+}
+
+//17.To print the following pattern
+12345
+1234
+123
+12
+1
+{
+    int a,b,c;
+    scanf("%d",&a);
+    for(b=a;b>=1;b--)
+    {
+        for(c=1;c<=b;c++)
+        {
+            printf("%d",c);
+        } 
+        printf("\n");
+    } 
+    return 0;
+}
+
+//18. Sum of first and last digit.
+{
+    int n, sum=0, firstDigit, lastDigit;
+    printf("Enter number to find sum of first and last digit = ");
+    scanf("%d", &n);
+    lastDigit = n % 10;
+    while(n >= 10)
+    {
+        n = n / 10;
+    }
+    firstDigit = n;
+    sum = firstDigit + lastDigit;
+    printf("Sum of first and last digit = %d", sum);
+
+}
+
+//19. Simple calculator using switch
+{
+    double a,b;
+    int d;
+    scanf("%lf%lf",&a,&b);
+    printf("Enter the operation which you want to perform");
+    printf("1.:- ADDITION ");
+    printf("2.:- SUBTRACTION");
+    printf("3.:- MULITIPLICATION");
+    printf("4.:- DIVISION");
+    scanf("%d",&d);
+    switch(d)
+    {
+        case 1:
+        printf("The sum of 2 nombers is %lf",a+b);
+        break;
+        case 2:
+        printf("The difference of the given numbers %lf",a-b);
+        break;
+        case 3:
+        printf("The result is %lf", a*b);
+        break;
+        case 4:
+        printf("The result is %lf", a/b);
+        break;
+        default:
+        printf("Enter valid operation");
+        
+    }return 0;
+}
+
+//20. Copy a String without using function
+{
+    char ab[20];
+    char ab1[20];
+    int i,c=0;
+    printf("Enter string");
+    gets(ab);
+    printf("Enter string 2");
+    gets(ab1);
+    for(i=0;ab[i]!='\0';i++)
+    {
+        ab1[i]=ab[i];
+    }
+    ab1[i]='\0';
+    printf("%s",ab1);
+}
+
+//21. Print the table of a number using while loop
+{
+    int a ,b,sum;
+    b = 0;
+    sum = 0;
+    printf("Enter the number whose table you want : ");
+    scanf("%d",&a);
+    while(b<10)
+    {
+        ++b;
+        sum = b*a;
+        printf("%d * %d = %d\n",a,b,sum);
+    }
+}
+
+//22.Product of the digits of the number
+{
+    int a, n, sum,v;
+    sum = 1;
+    v = 1;
+    printf("Enter the number : ");
+    scanf("%d", &a);
+    while (a> 0)
+    {
+        sum = a % 10;
+        a= a/10;
+        v= sum*v;
+        
+    }printf("%d",v);
+}
+
+//23. Perimeter of rectangle
+{
+    int l , b , p;
+    scanf("%d" , &l);
+    scanf("%d" , &b);
+    p = 2*(l+b);
+    printf("%d" , p);
+}
+
+//24. To find square of any number using functiond
+{
+    int a ,c;
+    scanf("%d" , &a);
+    c = sqrt(a);
+    printf("the value is %d" , c);
+    return 0;
+}
+
+//25. To calculate the number of choclates left after n days 
+{
+    int a , b ,d, c;
+    printf("Enter the numnber of chocolates ");
+    scanf("%d",&a);
+    printf("Enter the number of days :");
+    scanf("%d",&b);
+    printf("Number of chocolates he already has");
+    scanf("%d",&d);
+    c = ((a*b)+d)-b;
+    printf("Number of chocolates left after n days %d",c);
+}
+
+//26. To print the following pattern
+A
+BB
+CCC
+DDDD
+EEEEE
+{
+    int a;
+    char c = 65;
+    scanf("%d", &a);
+    for (int i = 1; i <= a; ++i)
+        
+    {
+        for (int j = 1; j <= i; ++j)
+            printf("%c", c);
+        ++c;
+    printf("\n");
+    }
+}
+
+//27. Length of string without function
+{
+    char text[100]; 
+    int i;
+    int count= 0;
+    printf("Enter any string: ");
+    gets(text);
+    for(i=0; text[i]!='\0'; i++)
+    {
+        count++;
+    }
+
+    printf("Length of '%s' = %d", text, count);
+
+    return 0;
+}
+
+//28. Program to multiply two numbers using user defined function
+
+void mult(int num,int num1){
+    int pro=num*num1;
+    printf("%d\n",pro);
+}
+void main()
+{
+    mult(5,6);
+}
+
+//29. 
+void mult(int num,int num1){
+    int pro=1;
+    for(int i=0;i<num1;i++){
+       pro=pro*num; 
+    }
+    printf("%d\n",pro);
+}
+void main()
+{
+    mult(4,5);
+}
